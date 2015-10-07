@@ -12,7 +12,33 @@ public class Location {
   }
 
   public void Move(String order){
+	  if(order == "M"){
+		  this.MovePosition();
+	  }else{
+	    // TODO
+	  }
+  }
 
+  @Override public String toString() {
+	String formattedOutput = ( this.x + " " + this.y + " " + this.direction);
+	return formattedOutput;
+  }
+
+  private void MovePosition(){
+	  switch (this.direction) {
+      case "N":
+    	  this.y++;
+    	  break;
+      case "S":
+    	  this.y--;
+          break;
+      case "E":
+    	  this.x++;
+          break;
+      case "W":
+    	  this.x--;
+          break;
+	  }
   }
 
 }
