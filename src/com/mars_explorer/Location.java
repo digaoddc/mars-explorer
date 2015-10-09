@@ -1,44 +1,56 @@
 package com.mars_explorer;
 
+import java.util.Iterator;
+
 public class Location {
   private int x, y;
-  private String direction;
-  //  private Direction direction;
+  private Direction direction;
 
   public Location(int x, int y, String direction){
     this.x = x;
     this.y = y;
-    this.direction = direction;
+    Direction d = new Direction(direction);
+    this.direction = d;
   }
 
-  public void Move(String order){
-	  if(order == "M"){
-		  this.MovePosition();
-	  }else{
-	    // TODO
-	  }
+  public void Move(String[] orders){
+    for (String order : orders) {
+      if(order == "M"){
+        this.MovePosition();
+      }else{
+    	  moveTo(order);
+      }
+    }
   }
 
   @Override public String toString() {
-	String formattedOutput = ( this.x + " " + this.y + " " + this.direction);
-	return formattedOutput;
+    String formattedOutput = ( this.x + " " + this.y + " " + this.direction.getDirection());
+    return formattedOutput;
+  }
+
+  private void moveTo(String dir){
+   if(dir == "R"){
+      this.direction.turnRight();
+    }else{
+      this.direction.TurnLeft();
+    }
   }
 
   private void MovePosition(){
-	  switch (this.direction) {
+    switch (this.direction.getDirection()) {
       case "N":
-    	  this.y++;
-    	  break;
+        this.y++;
+        break;
       case "S":
-    	  this.y--;
-          break;
+        this.y--;
+        break;
       case "E":
-    	  this.x++;
-          break;
+        this.x++;
+        break;
       case "W":
-    	  this.x--;
-          break;
-	  }
+        this.x--;
+        break;
+    }
   }
 
 }
