@@ -17,9 +17,14 @@ Possible commands are "L", "R" and "M". From those, "L" and "R" make the explore
 
 
 ## Usage
-
-
-
+Start service on port 8080, and make a curl passing Initial position separed by "-", and commands .
+```
+$ curl http://localhost:8080/mars-explorer/3-3-E/MMRMMRMRRM
+```
+Output will be a json similar to this one below:
+```
+{"string":"5 1 E"}
+```
 
 ## Examples
 ```
