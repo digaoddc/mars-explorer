@@ -1,4 +1,4 @@
-package com.mars_explorer;
+package br.com.explorer;
 
 import static org.junit.Assert.*;
 

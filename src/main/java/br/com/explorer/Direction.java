@@ -1,4 +1,4 @@
-package com.mars_explorer;
+package br.com.explorer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +38,7 @@ public class Direction {
     for (Entry<String, Integer> entry : Positions.entrySet()) {
       if (entry.getValue().equals(value)) {
         Coordinate = entry.getKey();
+        break;
       }
     }
     return Coordinate;

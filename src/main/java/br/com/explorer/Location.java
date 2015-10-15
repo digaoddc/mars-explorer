@@ -1,4 +1,4 @@
-package com.mars_explorer;
+package br.com.explorer;
 
 import java.util.Iterator;
 
@@ -15,7 +15,7 @@ public class Location {
 
   public void Move(String[] orders){
     for (String order : orders) {
-      if(order == "M"){
+      if(order.equals("M")){
         this.MovePosition();
       }else{
     	  moveTo(order);
@@ -29,7 +29,7 @@ public class Location {
   }
 
   private void moveTo(String dir){
-   if(dir == "R"){
+   if(dir.equals("R")){
       this.direction.turnRight();
     }else{
       this.direction.TurnLeft();
